@@ -103,13 +103,15 @@
 /* navbar logo */
 
 .navbar-logo {
-    height: 7.5rem;
-    width: auto; /* Maintain aspect ratio */
+    height: 4.5rem;
+    padding: 1rem 0;
+    width: auto;
     filter: brightness(1.5); /* Increase brightness */
     transition: filter 0.3s ease; /* Smooth transition for hover effect */
 }
 @media (max-width: 767.98px) {
     .navbar-logo {
-        height: 4.5rem;
+        height: 3.5rem;
+        padding: 0.5rem 0;
     }
 }
