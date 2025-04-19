@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    outline: none;
+}
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #000000e7) !important;
+    /* Gradient background */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+@media (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1240px;
+    }
+}
+/* Show the toggler for screens between 992px and 1199px */
+
+@media (min-width: 767px) and (max-width: 1199.98px) {
+    /* Override Bootstrap's default .navbar-expand-lg behavior */
+    .navbar-expand-lg {
+        flex-wrap: wrap !important; /* Allow wrapping for the toggler and collapsed menu */
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column;
+        margin: 0 0 1.5rem 0 !important;
+    }
+
+    /* Force the toggler to be visible */
+    .custom-navbar .navbar-toggler {
+        display: block !important;
+    }
+
+    /* Hide the collapsed menu by default */
+    .custom-navbar .navbar-collapse {
+        display: none !important;
+    }
+
+    /* Ensure the collapsed menu is hidden */
+    .custom-navbar .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    /* Show the menu when toggler is clicked and display it as a column */
+    .custom-navbar .navbar-collapse.collapse.show {
+        display: flex !important;
+        flex-basis: 100%; /* Take full width */
+        flex-grow: 1;
+        align-items: flex-start; /* Align items to the left */
+        flex-direction: column; /* Stack menu items vertically */
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+}
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height */
+    background-image: url('./assets/images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 2rem;
+    color: rgba(0, 0, 0, 1);
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    .hero {
+        height: 100%; /* Slightly shorter height for mobile */
+        padding: 4rem 1rem; /* Smaller padding */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero {
+        height: 90vh; /* Adjust height for tablets */
+        padding: 5rem 1.5rem; /* Medium padding */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Medium font size for tablets */
+    }
+
+    .hero p {
+        font-size: 1.25rem; /* Medium font size for tablets */
+    }
+}
+
+/* Laptop (1024px to 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .hero {
+        height: 100vh; /* Full height for laptops */
+        padding: 6rem 2rem; /* Default padding */
+    }
+
+    .hero h1 {
+        font-size: 3rem; /* Larger font size for laptops */
+    }
+
+    .hero p {
+        font-size: 1.5rem; /* Larger font size for laptops */
+    }
+}
+
+/* PC (1440px and above) */
+@media (min-width: 1440px) {
+    .hero {
+        height: 100vh; /* Full height for PCs */
+        padding: 8rem 3rem; /* Larger padding for PCs */
+    }
+
+    .hero h1 {
+        font-size: 4rem; /* Largest font size for PCs */
+    }
+
+    .hero p {
+        font-size: 1.75rem; /* Largest font size for PCs */
+    }
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Increased opacity for a darker effect */
+    z-index: -1; /* Places overlay behind the content */
+}
+.navbar-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.hero-section {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 5rem auto 0;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 768px) {
+    .hero-section {
+        margin: 8rem auto 0;
+    }
+}
+/* Hero Section Typography */
+.hero-section h1 {
+    font-family: 'Poppins', sans-serif; /* Sexy font for heading */
+    font-weight: 700; /* Bold */
+
+    line-height: 1.2; /* Better line spacing */
+    margin-bottom: 1.5rem; /* Spacing below the heading */
+    color: white; /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+}
+
+.hero-section p {
+    font-family: 'Montserrat', sans-serif; /* Complementary font for paragraph */
+    font-weight: 400; /* Regular weight */
+    font-size: 1.25rem; /* Slightly larger font size */
+    line-height: 1.6; /* Better line spacing */
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    margin-bottom: 2rem; /* Spacing below the paragraph */
+}
+
+.hero-section .btn {
+    text-shadow: none;
+}
+/* Custom Button Styles */
+.custom-btn {
+    padding: 12px 24px; /* Increase padding for a larger button */
+    font-size: 16px; /* Slightly larger font size */
+    font-weight: 600; /* Bold text */
+    border-radius: 30px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: none; /* Remove default border */
+}
+
+/* Primary Button (Solid) */
+.custom-btn.btn-primary {
+    background: linear-gradient(45deg, #8a2be2, #ff007f); /* Purple to Pink gradient */
+    color: white; /* White text */
+}
+
+/* Primary Button Hover Effect */
+.custom-btn.btn-primary:hover {
+    background: linear-gradient(45deg, #ff007f, #8a2be2); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+
+/* Outline Button */
+.custom-btn.btn-outline-primary {
+    background: transparent; /* Transparent background */
+    border: 2px solid #20c997; /* Teal border */
+    color: #20c997; /* Teal text */
+}
+
+/* Outline Button Hover Effect */
+.custom-btn.btn-outline-primary:hover {
+    background: linear-gradient(45deg, #20c997, #00b894); /* Teal to Green gradient on hover */
+    color: white; /* White text on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+/* End */
+/* Animation for hero section */
+/* HeroSection.css */
+
+/* Fade-in animation for text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pop-up animation for buttons */
+@keyframes popUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8); /* Start smaller */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* Pop to normal size */
+    }
+}
+
+/* Apply fade-in animation to text */
+.hero-section h1,
+.hero-section p {
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Delay the paragraph animation */
+.hero-section p {
+    animation-delay: 0.5s; /* Delay the paragraph animation */
+}
+
+/* Apply pop-up animation to buttons */
+.hero-section .btn {
+    opacity: 0; /* Start invisible */
+    animation: popUp 0.5s ease-out forwards;
+}
+
+/* Delay the button animations */
+.hero-section .btn:nth-child(1) {
+    animation-delay: 1s; /* Delay first button */
+}
+
+.hero-section .btn:nth-child(2) {
+    animation-delay: 1.5s; /* Delay second button */
+}
+/* End */
+/* WhyChooseUs.css */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+    }
+    60% {
+        transform: scale(1.05) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Initially Hide Everything */
+.why-choose-us h1,
+.why-choose-us p,
+.why-choose-us .benefit-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Apply Animation When Visible */
+.why-choose-us h1.show {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.why-choose-us p.show {
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 0.5s; /* Start after h1 */
+}
+
+.why-choose-us .benefit-card.show {
+    animation: popUp 1.3s ease-out forwards;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Staggered Card Animations */
+.why-choose-us .benefit-card.show:nth-child(1) {
+    animation-delay: 1.4s;
+}
+.why-choose-us .benefit-card.show:nth-child(2) {
+    animation-delay: 1.5s;
+}
+.why-choose-us .benefit-card.show:nth-child(3) {
+    animation-delay: 1.6s;
+}
+.why-choose-us .benefit-card.show:nth-child(4) {
+    animation-delay: 1.7s;
+}
+
+/* end */
+/* career */
+.careers {
+    background: linear-gradient(135deg, #111317, #1a1d23);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    min-height: 90vh;
+}

@@ -1,0 +1,115 @@
+/* Navbar.css */
+.navbar-container {
+    position: relative;
+    padding: 1.25rem;
+}
+.navbar {
+    padding: 0 !important;
+}
+.custom-navbar {
+    padding: 0 !important;
+    background: rgba(0, 0, 0, 0.925); /* Slightly lighter for better contrast */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(223, 217, 217);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Media query for mobile view */
+@media (max-width: 767.98px) {
+    .navbar-expand-lg {
+        flex-wrap: wrap !important; /* Allow wrapping for the toggler and collapsed menu */
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column;
+        margin: 0 0 1.5rem 0 !important;
+    }
+
+    /* Force the toggler to be visible */
+    .custom-navbar .navbar-toggler {
+        display: block !important;
+    }
+
+    /* Hide the collapsed menu by default */
+    .custom-navbar .navbar-collapse {
+        display: none !important;
+    }
+
+    /* Ensure the collapsed menu is hidden */
+    .custom-navbar .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    /* Show the menu when toggler is clicked and display it as a column */
+    .custom-navbar .navbar-collapse.collapse.show {
+        display: flex !important;
+        flex-basis: 100%; /* Take full width */
+        flex-grow: 1;
+        align-items: flex-start; /* Align items to the left */
+        flex-direction: column; /* Stack menu items vertically */
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768.98px) {
+    .custom-navbar {
+        padding: 0.3rem !important; /* Padding for mobile view */
+    }
+}
+@media (max-width: 1024.98px) {
+    .custom-navbar {
+        padding: 0.4rem !important; /* Padding for mobile view */
+    }
+}
+.btn-darks {
+    color: #cec9c9 !important;
+    font-weight: 600 !important;
+    background: transparent !important;
+    border: 2px solid #cec9c9 !important;
+    border-radius: 10px !important;
+}
+.btn-darks:hover {
+    background-color: rgb(255, 255, 255) !important;
+    color: #000000 !important;
+}
+.custom-navbar .nav-link {
+    color: #cec9c9 !important;
+    margin: 0 10px; /* Space between links */
+    font-weight: 700 !important; /* Medium font weight */
+    transition: color 0.3s ease; /* Smooth color transition */
+    cursor: pointer !important;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #ffffff !important;
+}
+.custom-navbar .nav-link.active {
+    color: #ffffff !important; /* Active link color */
+    font-weight: bold; /* Optional: Add bold text for active links */
+    border-bottom: 2px solid #35a7b2; /* Optional: Add an underline effect */
+}
+.custom-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.719); /* Light border for toggler */
+}
+
+/* Navbar.css */
+.custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='rgba(255, 255, 255, 1)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4 6h16M4 12h16m-7 6h7'/%3E%3C/svg%3E");
+    width: 25px;
+    height: 24px;
+}
+/* navbar logo */
+
+.navbar-logo {
+    height: 7.5rem;
+    width: auto; /* Maintain aspect ratio */
+    filter: brightness(1.5); /* Increase brightness */
+    transition: filter 0.3s ease; /* Smooth transition for hover effect */
+}
+@media (max-width: 767.98px) {
+    .navbar-logo {
+        height: 4.5rem;
+    }
+}

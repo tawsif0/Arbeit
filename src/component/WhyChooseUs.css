@@ -1,0 +1,168 @@
+/* Why Choose Us Section */
+
+.why-choose-us {
+    position: relative;
+    overflow: hidden;
+    padding: 10rem 3rem 13rem 3rem !important;
+    border-radius: 0 0 150% 150% / 0 0 20% 20%;
+    z-index: 1;
+}
+.why-choose-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Same gradient as the background */
+    z-index: -1;
+    border-radius: inherit;
+}
+/* Curved Shape for Mobile View */
+@media (max-width: 767px) {
+    .why-choose-us {
+        border-radius: 0 0 100% 100% / 0 0 0% 20%; /* Smoother rounded bottom edges */
+        padding: 8rem 1.5rem 6rem 1.5rem !important; /* Adjust padding for mobile */
+    }
+}
+/* Benefit Cards */
+.benefit-card {
+    border: none;
+    border-radius: 15px;
+    min-height: 350px;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    transition: all 0.3s ease;
+    height: 100%;
+    overflow: hidden; /* Ensure content stays within the card */
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); /* Optional: Add a semi-transparent background */
+}
+
+/* Pseudo-element for the gradient border */
+.benefit-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0; /* Start with no height */
+    background: linear-gradient(45deg, #8a2be2, #ff007f); /* Gradient color */
+    transition: height 0.3s ease; /* Smooth transition for the border */
+    z-index: -1; /* Place it behind the card content */
+}
+
+/* Hover Effect */
+.benefit-card:hover {
+    scale: 1.03;
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Expand the gradient border on hover */
+.benefit-card:hover::after {
+    height: 8px; /* Height of the gradient border */
+}
+
+/* Card Content */
+.benefit-card .card-body {
+    position: relative;
+    z-index: 1; /* Ensure content is above any pseudo-elements */
+}
+
+/* Optional: Add a subtle shine effect on hover */
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 70%);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.benefit-card:hover::before {
+    opacity: 1; /* Show shine effect on hover */
+}
+
+/* Benefit Icon */
+.benefit-icon-container {
+    background: linear-gradient(45deg, #8a2be2, #ff007f); /* Gradient background */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1.5rem 0; /* Remove auto margin and align to the left */
+}
+.benefit-icon-container:hover {
+    scale: 0.9;
+}
+.benefit-icon {
+    font-size: 2rem; /* Larger icon size */
+    color: white; /* White icon color */
+}
+
+/* Benefit Title */
+.benefit-title {
+    font-size: 1.5rem; /* Larger title */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 1rem; /* Spacing below title */
+    color: #333; /* Dark text color */
+}
+.benefit-title:hover {
+    color: #1e1f70; /* Dark text color */
+}
+/* Benefit Description */
+.benefit-description {
+    font-size: 1rem; /* Slightly larger description */
+    line-height: 1.6; /* Better line spacing */
+    color: #666; /* Gray text color */
+}
+/* Why Choose Us Section Typography */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.why-choose-us h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    -webkit-background-clip: text; /* Clip text to gradient */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make text transparent */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out; /* Apply animation */
+}
+.body-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+@media (max-width: 1292px) {
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+}
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+}

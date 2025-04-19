@@ -1,0 +1,211 @@
+.client-success-stories {
+    padding: 10rem 3rem !important;
+    background: black; /* Default black background */
+    color: #ccc; /* Ash color for initial text */
+}
+@media (max-width: 767px) {
+    .client-success-stories {
+        padding: 8rem 1.5rem 6rem 1.5rem !important; /* Adjust padding for mobile */
+    }
+}
+.sections-title {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    background: linear-gradient(90deg, #00ffffbe, #00ffff, #ff00ff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite linear;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.testimonial-item {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.4); /* Glassy Black Effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Glass Cards */
+.testimonial-item:hover {
+    box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.15);
+}
+.testimonial-item:nth-child(1) {
+    max-height: 100%;
+}
+
+/* Second Testimonial: Partially Visible (150px) */
+.testimonial-item:nth-child(2) {
+    max-height: 115px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: none; /* Remove bottom border */
+    box-shadow: none; /* Remove bottom shadow */
+}
+
+/* Blurred Bottom Effect for Second Testimonial */
+.testimonial-item:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    width: 100%;
+    height: 18px;
+
+    background: rgba(0, 0, 0, 0.082);
+    backdrop-filter: blur(50px);
+    opacity: 1; /* Show the blur effect on hover */
+    backdrop-filter: blur(12px); /* Slightly increase the blur for effect */
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease; /* Smooth transition for opacity and blur */
+}
+
+/* Remaining Testimonials: Initially Hidden */
+.testimonial-item:nth-child(n + 3) {
+    max-height: 0;
+    display: none;
+    overflow: hidden;
+}
+
+/* Expanded State: Reveal All */
+.testimonial-item.expanded {
+    max-height: 100% !important;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Remove blur effect when expanded */
+.testimonial-item.expanded::after {
+    opacity: 0;
+}
+
+.testimonial-quote {
+    font-size: 2rem; /* Large text like h2 */
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: inherit;
+    overflow: hidden;
+}
+
+.quote-word {
+    display: inline-block;
+    opacity: 0.3;
+    transition: opacity 0.9s ease, color 0.9s ease;
+    white-space: pre;
+}
+
+.testimonial-item.reveal .quote-word {
+    opacity: 1;
+}
+
+.testimonial-item.reveal .quote-word {
+    transition-delay: calc(0.1s * var(--word-index)); /* Dynamic delay based on --word-index */
+}
+/* Add more nth-child rules as needed for longer text */
+
+.testimonial-author {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: inherit;
+    opacity: 0.7; /* Subtle ash color */
+    transition: opacity 0.8s ease, color 0.8s ease;
+    text-align: end;
+}
+
+.testimonial-item.reveal .testimonial-author {
+    opacity: 1;
+    color: #ccc;
+}
+
+.dividers {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(45deg, #819ba0, #3fefff52); /* Gradient background */
+    background-size: 200% 100%; /* Double the width for smooth animation */
+    margin: 2rem 0;
+    animation: moveGradient 3s linear infinite; /* Animation for moving gradient */
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 100% 50%; /* Start from the right */
+    }
+    100% {
+        background-position: 0% 50%; /* Move to the left */
+    }
+}
+.glossy-neon-button {
+    position: relative;
+    padding: 12px 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000; /* Text color */
+    background: linear-gradient(45deg, #00ffff, #00ffaa); /* Neon gradient */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.glossy-neon-button .button-text {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.glossy-neon-button .button-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    color: #000; /* Arrow color */
+}
+
+.glossy-neon-button:hover {
+    box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.15);
+}
+
+.glossy-neon-button:hover .button-text {
+    opacity: 0;
+    transform: translateX(-20px); /* Move text to the left */
+}
+
+.glossy-neon-button:hover .button-arrow {
+    padding: 9.6px 4.3rem;
+    border-radius: 30px;
+    right: 50%;
+    transform: translate(50%, -50%); /* Move arrow to the center */
+    opacity: 1;
+    background: #000;
+    color: aliceblue;
+}

@@ -1,0 +1,76 @@
+/* Custom Variables */
+:root {
+    --black: #000000;
+    --ash: #cccccc;
+    --white: #ffffff;
+    --facebook-blue: #1da0f2b2;
+    --whatsapp-green: #25d366;
+    --twitter-blue: #1da0f2;
+    --linkedin-blue: #0a66c2;
+}
+
+/* Footer Base Styles */
+.footer-custom {
+    margin-top: -1px !important;
+    background-color: var(--black) !important;
+    color: var(--ash) !important;
+}
+@media (max-width: 767px) {
+    .custom-footer {
+        padding: 1rem 0.5rem 0rem 0.5rem !important;
+    }
+}
+.text-ash {
+    color: var(--ash) !important;
+}
+
+.border-ash {
+    border-color: var(--ash) !important;
+}
+
+/* Social Media Links */
+.social-link {
+    color: var(--ash) !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--white) !important;
+    transform: translateY(-5px);
+}
+
+/* Brand-Specific Hover Colors */
+.social-link.facebook:hover {
+    color: var(--facebook-blue) !important;
+}
+.social-link.twitter:hover {
+    color: var(--twitter-blue) !important;
+}
+.social-link.linkedin:hover {
+    color: var(--linkedin-blue) !important;
+}
+.social-link.whatsapp:hover {
+    color: var(--whatsapp-green) !important;
+}
+.text-reset {
+    cursor: pointer;
+}
+/* Hover Effect for Text Links */
+.text-reset:hover {
+    color: var(--white) !important;
+    text-decoration: none;
+    font-weight: 700;
+}
+.custom-contact-links {
+    text-decoration: none;
+    color: var(--ash);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+.custom-contact-links:hover {
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+.copyright {
+    background: rgba(255, 255, 255, 0.05);
+}
