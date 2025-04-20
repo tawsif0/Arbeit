@@ -50,5 +50,5 @@ cd Arbeit
 npm install
 
 # Go live in 3... 2... 1...
-npm start
+npm run start
 ```

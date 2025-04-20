@@ -88,7 +88,8 @@
 .custom-navbar .nav-link.active {
     color: #ffffff !important; /* Active link color */
     font-weight: bold; /* Optional: Add bold text for active links */
-    border-bottom: 2px solid #35a7b2; /* Optional: Add an underline effect */
+    border-bottom: 2px solid #35a7b2;
+    width: fit-content;
 }
 .custom-navbar .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.719); /* Light border for toggler */
@@ -114,4 +115,8 @@
         height: 3.5rem;
         padding: 0.5rem 0;
     }
+}
+.navbar-brand {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
 }

@@ -68,33 +68,36 @@ const Career = () => {
     }
 
     return (
-        <Container className="career-container">
-            <h1 className="career-main-title">Join Our Team</h1>
-            <Row className="career-job-grid">
-                {jobs.length > 0 ? (
-                    jobs.map((job) => (
-                        <Col key={job.id} md={6} lg={4} className="career-job-col">
-                            <Card className="career-job-card">
-                                <Card.Body className="career-job-card-body">
-                                    <Card.Title className="career-job-title">{job.title}</Card.Title>
-                                    <Card.Subtitle className="career-job-subtitle">
-                                        {job.location} | {job.type}
-                                    </Card.Subtitle>
-                                    <Card.Text className="career-job-description">{job.description}</Card.Text>
-                                    <Button className="career-apply-button" href={job.applyLink} target="_blank" rel="noopener noreferrer">
-                                        Apply Now
-                                    </Button>
-                                </Card.Body>
-                            </Card>
+        <>
+            <Container className="career-container">
+                <h1 className="career-main-title">Join Our Team</h1>
+                <Row className="career-job-grid">
+                    {jobs.length > 0 ? (
+                        jobs.map((job) => (
+                            <Col key={job.id} md={6} lg={4} className="career-job-col">
+                                <Card className="career-job-card">
+                                    <Card.Body className="career-job-card-body">
+                                        <Card.Title className="career-job-title">{job.title}</Card.Title>
+                                        <Card.Subtitle className="career-job-subtitle">
+                                            {job.location} | {job.type}
+                                        </Card.Subtitle>
+                                        <Card.Text className="career-job-description">{job.description}</Card.Text>
+                                        <Button className="career-apply-button" href={job.applyLink} target="_blank" rel="noopener noreferrer">
+                                            Apply Now
+                                        </Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))
+                    ) : (
+                        <Col className="career-no-jobs">
+                            <p>No jobs available right at this moment.</p>
                         </Col>
-                    ))
-                ) : (
-                    <Col className="career-no-jobs">
-                        <p>No jobs available right at this moment.</p>
-                    </Col>
-                )}
-            </Row>
-        </Container>
+                    )}
+                </Row>
+            </Container>
+            <div className="angled-divider"></div>
+        </>
     );
 };
 

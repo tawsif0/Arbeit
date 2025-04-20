@@ -2,10 +2,26 @@
 /* eslint-disable max-lines */
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-import { Link } from 'react-scroll'; // For smooth scrolling
-import './Footer.css'; // Import the custom CSS file
 
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
+
+import './Footer.css'; // Import the custom CSS file
+import logo from '../assets/images/logo.png';
 export default function App() {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleScrollTo = (sectionId) => {
+        if (location.pathname === '/') {
+            const el = document.getElementById(sectionId);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            navigate('/', { state: { scrollTo: sectionId }, replace: true });
+        }
+    };
+
     return (
         <MDBFooter className="footer-custom text-left text-lg-start text-ash">
             <div className="container custom-footer">
@@ -16,15 +32,15 @@ export default function App() {
                     </div>
 
                     <div>
-                        <a href="https://www.facebook.com/share/1Y1cNVU9zY/" target="_blank" rel="noopener noreferrer" className="me-4 social-link facebook">
+                        <a href="https://www.facebook.com/arbeittechnology" target="_blank" rel="noopener noreferrer" className="me-4 social-link facebook">
                             <MDBIcon fab icon="facebook-f" />
                         </a>
                         {/* <a href="#!" className="me-4 social-link twitter">
                             <MDBIcon fab icon="twitter" />
-                        </a>
-                        <a href="#!" className="me-4 social-link linkedin">
-                            <MDBIcon fab icon="linkedin" />
                         </a> */}
+                        <a href="https://www.linkedin.com/company/arbeit-technology/" className="me-4 social-link linkedin">
+                            <MDBIcon fab icon="linkedin" />
+                        </a>
                         <a href="https://wa.me/+8801707387608" target="_blank" rel="noopener noreferrer" className="me-4 social-link whatsapp">
                             <MDBIcon fab icon="whatsapp" />
                         </a>
@@ -38,8 +54,7 @@ export default function App() {
                             {/* Company Info */}
                             <MDBCol md="4" lg="5" xl="4" className="mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    <MDBIcon icon="gem" className="me-3" />
-                                    Arbeit Technology
+                                    <img src={logo} alt="Arbeit Logo" className="navbar-logo" />
                                 </h6>
                                 <p>
                                     Arbeit Technology delivers cutting-edge IT solutions, from custom websites to advanced management systems. We blend innovation, expertise, and technology to help
@@ -51,29 +66,29 @@ export default function App() {
                             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">Useful Links</h6>
                                 <p>
-                                    <Link to="why-choose-us" smooth={true} duration={500} className="text-reset">
+                                    <a onClick={() => handleScrollTo('why-choose-us')} className="text-reset" role="button">
                                         Why Choose Us
-                                    </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <Link to="our-services" smooth={true} duration={500} className="text-reset">
+                                    <a onClick={() => handleScrollTo('our-services')} className="text-reset" role="button">
                                         Our Services
-                                    </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <Link to="our-expertise" smooth={true} duration={500} className="text-reset">
+                                    <a onClick={() => handleScrollTo('our-expertise')} className="text-reset" role="button">
                                         Our Expertise
-                                    </Link>
+                                    </a>
                                 </p>
-                                <p>
-                                    <Link to="client-success-stories" smooth={true} duration={500} className="text-reset">
+                                {/* <p>
+                                    <a onClick={() => handleScrollTo('client-success-stories')} className="text-reset" role="button">
                                         Success Stories
-                                    </Link>
-                                </p>
+                                    </a>
+                                </p> */}
                                 <p>
-                                    <Link to="careers" smooth={true} duration={500} className="text-reset">
+                                    <RouterLink to="/careers" className="text-reset">
                                         Careers
-                                    </Link>
+                                    </RouterLink>
                                 </p>
                             </MDBCol>
 

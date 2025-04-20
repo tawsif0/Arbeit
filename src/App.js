@@ -6,7 +6,6 @@ import HeroSection from './component/HeroSection';
 import WhyChooseUs from './component/WhyChooseUs';
 import OurServices from './component/OurServices';
 import OurExpertise from './component/OurExpertise';
-import ClientSuccessStories from './component/ClientSuccessStories';
 import GetInTouch from './component/GetInTouch';
 import Footer from './component/Footer';
 import ScrollToTop from './component/scroll-top/ScrollToTop';
@@ -17,33 +16,34 @@ const App = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.hash) {
-            // Extract the section ID from the hash (e.g., #why-choose-us)
-            const sectionId = location.hash.replace('#', '');
+        // Handle scroll from navigation state
+        if (location.state?.scrollTo) {
+            const sectionId = location.state.scrollTo;
             const sectionElement = document.getElementById(sectionId);
 
             if (sectionElement) {
-                // Wait for the page to load, then scroll to the section
                 setTimeout(() => {
                     sectionElement.scrollIntoView({ behavior: 'smooth' });
-                }, 100); // Small delay to ensure the page has fully rendered
+                    // Clear the state after scrolling
+                    window.history.replaceState({}, document.title);
+                }, 100);
             }
         }
-    }, [location]);
+    }, [location.state]);
 
-    const validPaths = ['/', '/services'];
+    const validPaths = ['/', '/careers'];
+
     return (
         <div>
             <ScrollToTop />
             {validPaths.includes(location.pathname) && <CustomNavbar />}
 
             <Routes>
-                {/* Home Page Route */}
                 <Route
                     path="/"
                     element={
                         <>
-                            <section className="hero" id="hero">
+                            <section id="hero">
                                 <HeroSection />
                             </section>
                             <section id="why-choose-us" className="why-choose-us-section">
@@ -55,22 +55,23 @@ const App = () => {
                             <section id="our-expertise">
                                 <OurExpertise />
                             </section>
-                            <section id="client-success-stories">
-                                <ClientSuccessStories />
-                            </section>
-                            <section className="careers" id="careers">
-                                <Career />
-                            </section>
                             <section id="get-in-touch">
                                 <GetInTouch />
                             </section>
-                            <Footer />
                         </>
                     }
                 />
-
+                <Route
+                    path="/careers"
+                    element={
+                        <section className="careers" id="careers">
+                            <Career />
+                        </section>
+                    }
+                />
                 <Route path="*" element={<Error />} />
             </Routes>
+            {validPaths.includes(location.pathname) && <Footer />}
         </div>
     );
 };

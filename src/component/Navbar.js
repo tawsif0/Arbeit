@@ -1,79 +1,86 @@
 /* eslint-disable max-lines */
 import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import { Link as RouterLink, useLocation } from 'react-router-dom'; // Import useLocation
-import './Navbar.css'; // Import custom CSS for Navbar
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
+import './Navbar.css';
 import logo from '../assets/images/logo.png';
 
 const CustomNavbar = () => {
     const location = useLocation();
-    const [activeSection, setActiveSection] = useState('hero'); // State to track active section
+    const navigate = useNavigate();
+    const [activeSection, setActiveSection] = useState('hero');
 
-    // Function to handle smooth scrolling
     const handleSmoothScroll = (to) => {
         if (location.pathname === '/') {
-            // If already on the home page, smooth scroll to the section
-            document.getElementById(to).scrollIntoView({ behavior: 'smooth' });
+            const element = document.getElementById(to);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            // Clear any existing history state
+            window.history.replaceState({}, document.title, window.location.pathname);
         } else {
-            // If not on the home page, navigate to the home page first
-            window.location.href = `/#${to}`;
+            // Navigate to home without hash and scroll after render
+            navigate('/', {
+                state: { scrollTo: to },
+                replace: true
+            });
         }
     };
 
-    // Function to check if a link is active
     const isActive = (to) => {
         return activeSection === to;
     };
 
-    // Effect to add scroll event listener and update active section
     useEffect(() => {
-        const sections = ['hero', 'why-choose-us', 'our-services', 'our-expertise', 'client-success-stories', 'careers', 'get-in-touch'];
+        const sections = ['hero', 'why-choose-us', 'our-services', 'our-expertise', 'client-success-stories', 'get-in-touch'];
 
         const handleScroll = () => {
-            const scrollPosition = window.scrollY + 100; // Adjust offset for better accuracy
+            const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element && element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
-                    setActiveSection(section); // Update active section
-                    break;
+                    setActiveSection(section);
+                    return;
                 }
             }
+
+            // If none match, fallback to clearing the active section (optional)
+            setActiveSection('');
         };
 
-        // Add scroll event listener
-        window.addEventListener('scroll', handleScroll);
+        if (location.pathname === '/') {
+            window.addEventListener('scroll', handleScroll);
 
-        // Set initial active section based on hash (if any)
-        if (location.hash) {
-            const hash = location.hash.replace('#', '');
-            if (sections.includes(hash)) {
-                setActiveSection(hash);
+            // Handle scroll from navigation state
+            if (location.state?.scrollTo) {
+                const section = location.state.scrollTo;
+                const element = document.getElementById(section);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
             }
+        } else if (location.pathname === '/careers') {
+            setActiveSection('careers');
         }
 
-        // Cleanup event listener on unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [location.hash]);
+    }, [location.pathname, location.state]);
 
     return (
         <div className="navbar-container">
             <Navbar expand="lg" className="custom-navbar">
                 <Container>
-                    {/* Brand Logo */}
-                    <Navbar.Brand as={RouterLink} to="/">
+                    <Navbar.Brand as={RouterLink} to="/" onClick={() => window.history.replaceState({}, '', '/')}>
                         <img src={logo} alt="Arbeit Logo" className="navbar-logo" />
                     </Navbar.Brand>
 
-                    {/* Hamburger Menu Toggle */}
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-                    {/* Navbar Links */}
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            {/* Link to Root ('/') and then smoothly scroll to respective sections */}
                             <Nav.Link onClick={() => handleSmoothScroll('hero')} className={isActive('hero') ? 'active' : ''}>
                                 Home
                             </Nav.Link>
@@ -86,15 +93,11 @@ const CustomNavbar = () => {
                             <Nav.Link onClick={() => handleSmoothScroll('our-expertise')} className={isActive('our-expertise') ? 'active' : ''}>
                                 Our Expertise
                             </Nav.Link>
-                            <Nav.Link onClick={() => handleSmoothScroll('client-success-stories')} className={isActive('client-success-stories') ? 'active' : ''}>
-                                Success Stories
-                            </Nav.Link>
-                            <Nav.Link onClick={() => handleSmoothScroll('careers')} className={isActive('careers') ? 'active' : ''}>
+                            <Nav.Link as={RouterLink} to="/careers" className={isActive('careers') ? 'active' : ''}>
                                 Careers
                             </Nav.Link>
                         </Nav>
 
-                        {/* CTA Button */}
                         <Button onClick={() => handleSmoothScroll('get-in-touch')} className="ms-lg-3 btn-darks">
                             Get a Free Consultation
                         </Button>
