@@ -46,7 +46,7 @@ const CustomNavbar = () => {
             }
 
             // If none match, fallback to clearing the active section (optional)
-            setActiveSection('');
+            setActiveSection('hero');
         };
 
         if (location.pathname === '/') {
@@ -60,6 +60,9 @@ const CustomNavbar = () => {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }
             }
+
+            // Reset active section when we are back on home page
+            setActiveSection('hero');
         } else if (location.pathname === '/careers') {
             setActiveSection('careers');
         }
@@ -80,7 +83,7 @@ const CustomNavbar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
+                        <Nav className="mx-auto">
                             <Nav.Link onClick={() => handleSmoothScroll('hero')} className={isActive('hero') ? 'active' : ''}>
                                 Home
                             </Nav.Link>

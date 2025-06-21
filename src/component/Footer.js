@@ -2,11 +2,10 @@
 /* eslint-disable max-lines */
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
-
 import './Footer.css'; // Import the custom CSS file
 import logo from '../assets/images/logo.png';
+
 export default function App() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -35,9 +34,6 @@ export default function App() {
                         <a href="https://www.facebook.com/arbeittechnology" target="_blank" rel="noopener noreferrer" className="me-4 social-link facebook">
                             <MDBIcon fab icon="facebook-f" />
                         </a>
-                        {/* <a href="#!" className="me-4 social-link twitter">
-                            <MDBIcon fab icon="twitter" />
-                        </a> */}
                         <a href="https://www.linkedin.com/company/arbeit-technology/" className="me-4 social-link linkedin">
                             <MDBIcon fab icon="linkedin" />
                         </a>
@@ -80,13 +76,8 @@ export default function App() {
                                         Our Expertise
                                     </a>
                                 </p>
-                                {/* <p>
-                                    <a onClick={() => handleScrollTo('client-success-stories')} className="text-reset" role="button">
-                                        Success Stories
-                                    </a>
-                                </p> */}
                                 <p>
-                                    <RouterLink to="/careers" className="text-reset">
+                                    <RouterLink to="/careers" className="text-reset" onClick={() => handleScrollTo('career-hero')}>
                                         Careers
                                     </RouterLink>
                                 </p>

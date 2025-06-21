@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './Careers.css';
@@ -75,11 +75,17 @@ const Career = () => {
         setShowModal(false);
         setSelectedJob(null);
     };
-
+    useEffect(() => {
+        // Scroll to the career-hero section when this page is loaded
+        const careerHero = document.getElementById('career-hero');
+        if (careerHero) {
+            careerHero.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, []);
     return (
         <div className="career-page-wrapper">
             {/* Animated Hero Section */}
-            <motion.section className="career-hero" style={{ height, opacity }}>
+            <motion.section className="career-hero" id="career-hero" style={{ height, opacity }}>
                 <motion.div className="hero-content" style={{ scale }}>
                     <h1 className="career-main-title">
                         Join Our <span className="highlight">Innovative</span> Team

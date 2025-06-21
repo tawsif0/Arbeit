@@ -119,10 +119,6 @@ const GetInTouch = () => {
     return (
         <section className="get-in-touch-section">
             {/* Video Background */}
-            <video autoPlay loop muted playsInline className="background-video">
-                <source src={require('../assets/videos/space.mp4')} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
 
             <div className="container">
                 <div className="text-wrapper">
@@ -192,8 +188,6 @@ const GetInTouch = () => {
                 bodyClassName="toast-body" // Custom class for toast body
                 progressClassName="toast-progress" // Custom class for toast progress bar
             />
-
-            <div className="angled-divider"></div>
         </section>
     );
 };

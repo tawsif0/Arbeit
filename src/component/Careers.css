@@ -1,11 +1,11 @@
 /* ======= FUTURISTIC CAREERS PAGE ======= */
 :root {
-    --primary: #00ccff;
-    --secondary: #00ffcc;
+    --primary: #35a7b2;
+    --secondary: #4ecdc4;
     --dark: #0f0c29;
     --darker: #090717;
-    --light: #f9f9f9;
-    --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    --light: #fff;
+    --gradient: linear-gradient(90deg, #35a7b2, #4ecdc4);
     --card-bg: rgba(15, 12, 41, 0.95);
 }
 
@@ -13,7 +13,6 @@
 .career-page-wrapper {
     position: relative;
     overflow-x: hidden;
-    background: var(--darker);
     color: var(--light);
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
@@ -27,7 +26,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--dark), #1a1647);
+    background: #0c111a;
     overflow: hidden;
     z-index: 10;
     padding: 80px 0;
@@ -59,7 +58,7 @@
     display: inline-block;
 }
 
-.highlight::after {
+/* .highlight::after {
     content: '';
     position: absolute;
     bottom: 5px;
@@ -69,7 +68,7 @@
     background: rgba(0, 255, 204, 0.3);
     z-index: -1;
     transform: skew(-15deg);
-}
+} */
 
 .career-subtitle {
     font-size: clamp(1.2rem, 2vw, 1.5rem) !important;

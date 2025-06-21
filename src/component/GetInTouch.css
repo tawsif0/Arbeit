@@ -11,23 +11,6 @@
     overflow: hidden;
 }
 
-/* Video as background */
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures full coverage */
-    z-index: -1; /* Places video behind content */
-}
-
-/* Ensures content appears above video */
-.container {
-    position: relative;
-    z-index: 1;
-}
-
 @media (max-width: 767px) {
     .get-in-touch-section {
         padding: 5rem 0.5rem 6rem 0.5rem !important;
@@ -77,11 +60,11 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    background: rgba(53, 167, 178, 0.1);
+    border: 1px solid rgba(53, 167, 178, 0.2);
     border-radius: 20px;
     backdrop-filter: blur(15px); /* Glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(53, 167, 178, 0.3);
     animation: fadeIn 1.5s ease-out;
 }
 
@@ -125,7 +108,7 @@
 }
 
 .form-group input:focus {
-    border-color: #00d9ffc5;
+    border-color: #35a7b2;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 15px rgba(0, 255, 218, 0.3);
     outline: none;
@@ -186,32 +169,25 @@
 
 /* ======== Neon Glowing CTA Button ======== */
 .cta-button {
-    background: linear-gradient(135deg, #00c9ff, #3efff5);
-    border: none !important;
     padding: 15px 40px !important;
-    font-size: 1.1rem;
-    font-weight: bold !important;
-    border-radius: 50px;
-    color: #0f0c29 !important;
-
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 30px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+    background: transparent !important; /* Transparent background */
+    border: 2px solid #4ecdc4 !important; /* Teal border */
+    color: rgb(255, 255, 255) !important;
     transition: all 0.4s ease;
     animation: fadeIn 2s ease-in-out;
 }
 
 .cta-button:hover {
-    box-shadow: 0 0 15px rgba(0, 201, 255, 0.6), 0 0 30px rgba(87, 230, 255, 0.6);
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4) !important;
+    box-shadow: 0 0 15px rgba(0, 201, 255, 0.6), 0 0 30px rgba(87, 230, 255, 0.336) !important;
+    color: #000000 !important;
     transform: scale(1.05);
-}
-
-/* ======== Angled Divider (Cool Structural Effect) ======== */
-.angled-divider {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background: #000000;
-    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
 }
 
 /* Responsive Adjustments for Mobile Screens */

@@ -10,13 +10,101 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #000000, #000000e7) !important;
-    /* Gradient background */
+    background: #0c111a !important;
 }
 
 html {
     scroll-behavior: smooth;
 }
+/* App.css */
+.app-container {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Section with Orb Container */
+.section-with-orb {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Floating Orbs */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+    width: 300px;
+    height: 300px;
+    animation: float 25s infinite alternate ease-in-out;
+}
+
+/* Left Orb Positioning */
+.left-orb .floating-orb {
+    left: -100px;
+    background: radial-gradient(circle, #35a7b2, transparent 70%);
+}
+
+/* Right Orb Positioning */
+.right-orb .floating-orb {
+    right: -100px;
+    background: radial-gradient(circle, #4ecdc4, transparent 70%);
+}
+
+/* Specific Orb Positions */
+.orb-1 {
+    top: 20%;
+}
+.orb-2 {
+    top: 30%;
+}
+.orb-3 {
+    top: 25%;
+}
+.orb-4 {
+    top: 20%;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(20px, 30px) rotate(5deg);
+    }
+    100% {
+        transform: translate(-10px, -20px) rotate(-5deg);
+    }
+}
+
+/* Grid Background */
+.section-with-orb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(53, 167, 178, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(53, 167, 178, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Ensure content stays above background elements */
+#why-choose-us,
+#our-services,
+#our-expertise,
+#get-in-touch,
+#hero,
+.careers,
+footer {
+    position: relative;
+    z-index: 1;
+}
+/* end */
 @media (min-width: 1200px) {
     .container,
     .container-lg,
@@ -217,13 +305,13 @@ html {
 /* Outline Button */
 .custom-btn.btn-outline-primary {
     background: transparent; /* Transparent background */
-    border: 2px solid #20c997; /* Teal border */
-    color: #20c997; /* Teal text */
+    border: 2px solid #4ecdc4 !important; /* Teal border */
+    color: rgb(255, 255, 255) !important;
 }
 
 /* Outline Button Hover Effect */
 .custom-btn.btn-outline-primary:hover {
-    background: linear-gradient(45deg, #20c997, #00b894); /* Teal to Green gradient on hover */
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4) !important;
     color: white; /* White text on hover */
     transform: translateY(-2px); /* Slight lift on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
@@ -310,12 +398,6 @@ html {
 }
 
 /* Initially Hide Everything */
-.why-choose-us h1,
-.why-choose-us p,
-.why-choose-us .benefit-card {
-    opacity: 0;
-    transform: translateY(30px);
-}
 
 /* Apply Animation When Visible */
 .why-choose-us h1.show {
@@ -325,25 +407,6 @@ html {
 .why-choose-us p.show {
     animation: fadeIn 1.2s ease-out forwards;
     animation-delay: 0.5s; /* Start after h1 */
-}
-
-.why-choose-us .benefit-card.show {
-    animation: popUp 1.3s ease-out forwards;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Staggered Card Animations */
-.why-choose-us .benefit-card.show:nth-child(1) {
-    animation-delay: 1.4s;
-}
-.why-choose-us .benefit-card.show:nth-child(2) {
-    animation-delay: 1.5s;
-}
-.why-choose-us .benefit-card.show:nth-child(3) {
-    animation-delay: 1.6s;
-}
-.why-choose-us .benefit-card.show:nth-child(4) {
-    animation-delay: 1.7s;
 }
 
 /* end */

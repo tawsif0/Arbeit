@@ -34,10 +34,9 @@ const App = () => {
     const validPaths = ['/', '/careers'];
 
     return (
-        <div>
+        <div className="app-container">
             <ScrollToTop />
-            {validPaths.includes(location.pathname) && <CustomNavbar />}
-
+            {validPaths.includes(location.pathname) && <CustomNavbar />} {/* Pass activeSection to navbar */}
             <Routes>
                 <Route
                     path="/"
@@ -46,17 +45,33 @@ const App = () => {
                             <section id="hero">
                                 <HeroSection />
                             </section>
+                            {/* Why Choose Us */}
                             <section id="why-choose-us" className="why-choose-us-section">
-                                <WhyChooseUs />
+                                <div className="section-with-orb left-orb">
+                                    <div className="floating-orb orb-1"></div>
+                                    <WhyChooseUs />
+                                </div>
                             </section>
+                            {/* Our Services */}
                             <section id="our-services">
-                                <OurServices />
+                                <div className="section-with-orb right-orb">
+                                    <div className="floating-orb orb-2"></div>
+                                    <OurServices />
+                                </div>
                             </section>
+                            {/* Our Expertise */}
                             <section id="our-expertise">
-                                <OurExpertise />
+                                <div className="section-with-orb left-orb">
+                                    <div className="floating-orb orb-3"></div>
+                                    <OurExpertise />
+                                </div>
                             </section>
+                            {/* Get In Touch */}
                             <section id="get-in-touch">
-                                <GetInTouch />
+                                <div className="section-with-orb right-orb">
+                                    <div className="floating-orb orb-4"></div>
+                                    <GetInTouch />
+                                </div>
                             </section>
                         </>
                     }
@@ -65,7 +80,10 @@ const App = () => {
                     path="/careers"
                     element={
                         <section className="careers" id="careers">
-                            <Career />
+                            <div className="section-with-orb right-orb">
+                                <div className="floating-orb orb-4"></div>
+                                <Career />
+                            </div>
                         </section>
                     }
                 />

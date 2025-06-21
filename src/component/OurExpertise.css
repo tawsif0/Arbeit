@@ -1,253 +1,256 @@
-/* General Styles */
-.our-expertise {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 10rem 3rem !important;
+/* OurExpertise.css - Futuristic Redesign */
+
+.expertise-section {
+    position: relative;
+    padding: 8rem 2rem;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.container {
-    margin: 0 auto;
+/* Tech Grid Overlay */
+
+/* Floating Orbs */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+    z-index: -1;
 }
 
-/* Left Side: Heading and Description */
-.left-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-right: 3rem !important ;
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #35a7b2, transparent 70%);
+    top: 20%;
+    left: -100px;
+    animation: float 20s infinite alternate ease-in-out;
 }
-@media (max-width: 767.98px) {
-    .left-content {
-        padding-right: 0rem !important ;
-        padding-bottom: 2rem;
-        text-align: center;
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #4ecdc4, transparent 70%);
+    bottom: 10%;
+    right: -150px;
+    animation: float 25s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(20px, 30px) rotate(5deg);
+    }
+    100% {
+        transform: translate(-10px, -20px) rotate(-5deg);
     }
 }
 
-/* iPad/Tablet (768px to 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .left-content {
-        padding-right: 0rem !important ;
-        padding-bottom: 2rem;
-        text-align: center;
-    }
-}
+/* Section Title */
 .section-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    background: linear-gradient(45deg, #35a7b2, #2c3e50);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.title-gradient {
+    display: block;
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 3rem;
 }
 
-.section-subtitle {
+.title-outline {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.title-accent {
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.section-description {
     font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 90%;
+}
+
+.highlight {
+    color: #35a7b2;
     font-weight: 500;
-    color: #2c3e50;
 }
 
-/* Right Side: Card Slider */
-.right-content {
+/* Tech Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
     position: relative;
+    z-index: 2;
+}
+
+.tech-card {
+    position: relative;
+    border-radius: 16px;
     overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 280px;
+    background: rgba(15, 22, 36, 0.7);
+    border: 1px solid rgba(53, 167, 178, 0.1);
 }
 
-.card-slider {
-    height: 500px; /* Adjust height as needed */
-    overflow-y: scroll; /* Enable manual scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling */
-    position: relative;
-    padding: 1rem;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
-    cursor: grab; /* Cursor style for dragging */
-    user-select: none; /* Disable text selection */
+.tech-card:hover {
+    transform: translateY(-10px) scale(1.02);
 }
 
-.card-slider::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
-}
-
-.expertise-card {
-    border: none;
-    background: rgba(255, 255, 255, 0.452) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px);
-    color: rgba(0, 0, 0, 1) !important;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.3s ease-in-out;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-    user-select: none; /* Disable text selection */
-}
-/* Mobile (up to 767.98px) */
-@media (max-width: 767.98px) {
-    .expertise-card {
-        min-height: 350px;
-        max-height: 350px;
-    }
-}
-
-/* iPad/Tablet (768px to 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .expertise-card {
-        min-height: 350px; /* Slightly taller for tablets */
-        max-height: 350px;
-    }
-}
-
-/* Laptop (992px to 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .expertise-card {
-        min-height: 350px; /* Standard height for laptops */
-        max-height: 350px;
-    }
-}
-
-/* PC (1200px and above) */
-@media (min-width: 1200px) {
-    .expertise-card {
-        min-height: 298px; /* Taller height for larger screens */
-        max-height: 290px;
-    }
-}
-@media (min-width: 1600px) {
-    .expertise-card {
-        min-height: 300px; /* Taller height for larger screens */
-        max-height: 300px;
-    }
-}
-/* Hover effect for the card */
-.expertise-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* Gradient border bottom on hover */
-.expertise-card:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 8px; /* Height of the gradient border */
-    background: linear-gradient(45deg, #35a7b2, #2c3e50); /* Gradient color */
-    transition: height 0.3s ease; /* Smooth transition for the border */
-}
-
-/* Logo container */
-.expertise-card .card-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100px; /* Fixed size for logo container */
-    height: 100px; /* Fixed size for logo container */
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-    border-radius: 50%; /* Circular container */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    position: relative; /* Required for pseudo-element positioning */
-    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
-}
-
-/* Gradient border for the logo container on hover */
-.expertise-card .card-logo-container::before {
-    content: '';
+.card-glow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 50%; /* Match the logo container's shape */
-    background: linear-gradient(45deg, #35a7b2, #2c3e50); /* Gradient color */
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
-    z-index: -1; /* Place it behind the logo */
+    background: radial-gradient(circle at center, rgba(53, 167, 178, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-.expertise-card:hover .card-logo-container::before {
-    opacity: 1; /* Show the gradient border on hover */
+.tech-card:hover .card-glow {
+    opacity: 0.6;
 }
 
-/* Logo styling (black and white by default) */
-.expertise-card .card-logo {
-    width: 60px; /* Fixed logo size */
-    height: 60px; /* Fixed logo size */
-    object-fit: contain; /* Ensure logos fit properly */
-    filter: grayscale(100%); /* Convert logos to black and white */
-    transition: filter 0.3s ease-in-out;
-    user-select: none; /* Disable image selection */
-    pointer-events: none; /* Disable image dragging */
+.card-content {
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
 }
 
-/* Logo hover effect (original colors) */
-.expertise-card:hover .card-logo {
-    filter: grayscale(0%); /* Show original colors on hover */
+.tech-logo {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: rgba(53, 167, 178, 0.1);
+    border: 1px solid rgba(53, 167, 178, 0.2);
+    transition: all 0.4s ease;
 }
 
-/* Card title */
-.expertise-card .card-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+.tech-card:hover .tech-logo {
+    background: rgba(53, 167, 178, 0.2);
+    box-shadow: 0 0 20px rgba(53, 167, 178, 0.3);
+}
+
+.tech-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(1.5);
+    transition: filter 0.4s ease;
+}
+
+.tech-card:hover .tech-logo img {
+    filter: grayscale(0%) brightness(1);
+}
+
+.tech-title {
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #1b2025;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    color: white;
+    position: relative;
 }
 
-/* Card text */
-.expertise-card .card-text {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
+.tech-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
+
+.tech-card:hover .tech-title::after {
+    opacity: 1;
+}
+
+.tech-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.tech-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.tech-card:hover .tech-border {
+    transform: scaleX(1);
+}
+
 /* Responsive Design */
-@media (max-width: 767.98px) {
-    .our-expertise {
-        padding: 4rem 1rem;
-    }
-
-    .left-content {
-        padding-right: 0;
-        margin-bottom: 2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
-
-    .card-slider {
-        height: 400px;
-    }
-
-    .expertise-card {
-        flex-direction: column;
+@media (max-width: 992px) {
+    .expertise-intro {
+        margin-bottom: 3rem;
         text-align: center;
     }
 
-    .card-logo-container {
-        margin-right: 0;
-        margin-bottom: 15px;
+    .section-description {
+        max-width: 100%;
+    }
+
+    .title-gradient,
+    .title-outline,
+    .title-accent {
+        display: inline;
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise-section {
+        padding: 6rem 1.5rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        height: 240px;
     }
 }

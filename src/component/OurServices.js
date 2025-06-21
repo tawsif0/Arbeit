@@ -121,7 +121,7 @@ const OurServices = () => {
                                 <Card.Text className="service-description text-center">{service.description}</Card.Text>
                             </Card.Body>
                             <div className="text-center">
-                                <Button variant="outline-primary" className="custom-btns" onClick={() => handleSeeMore(service)}>
+                                <Button variant="outline-primary" className="customs-btns" onClick={() => handleSeeMore(service)}>
                                     See more
                                 </Button>
                             </div>

@@ -4,7 +4,7 @@
     overflow: hidden;
     padding: 10rem 3rem 12rem 3rem !important;
     color: white;
-    margin-top: -47px;
+    margin-top: -57px;
 }
 
 .our-services::before {
@@ -78,8 +78,8 @@
     border: none;
     width: 100%;
     border-radius: 15px;
-    background: rgb(255, 255, 255); /* White background */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    background: #1a2232 !important;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1); /* Soft shadow */
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -133,7 +133,7 @@
     left: 0;
     width: 100%;
     height: 0; /* Start with no height */
-    background: linear-gradient(45deg, #667eea, #764ba2); /* Gradient color */
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4); /* Gradient color */
     transition: height 0.3s ease; /* Smooth transition for the border */
     z-index: 1; /* Place it above the card content */
 }
@@ -150,7 +150,8 @@
 }
 /* Service Icon */
 .service-icon-container {
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: rgba(53, 167, 178, 0.1) !important;
+    border: 1px solid rgba(53, 167, 178, 0.2) !important;
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -169,7 +170,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2c3e50; /* Dark blue color */
+    color: #ffffff !important; /* Dark blue color */
     margin-bottom: 2px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -186,7 +187,7 @@
 .service-description {
     font-size: 1rem;
     line-height: 1.6;
-    color: #666;
+    color: #bdbaba;
     margin-bottom: 1.5rem;
     word-wrap: break-word;
     overflow: hidden;
@@ -233,7 +234,7 @@
         border-color: white; /* Show cursor */
     }
 }
-.custom-btns {
+.customs-btns {
     padding: 12px 24px !important;
     font-size: 16px !important;
     font-weight: 600 !important;
@@ -242,15 +243,16 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
     border: none !important;
 }
-.custom-btns.btn-outline-primary {
+.customs-btns.btn-outline-primary {
     background: transparent; /* Transparent background */
-    border: 2px solid #764ba2 !important; /* Teal border */
-    color: black !important;
+    border: 2px solid #4ecdc4 !important; /* Teal border */
+    color: rgb(255, 255, 255) !important;
 }
 
 /* Outline Button Hover Effect */
-.custom-btns.btn-outline-primary:hover {
-    background: linear-gradient(45deg, #667eea, #764ba2) !important;
+.customs-btns.btn-outline-primary:hover {
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4) !important;
+    border: none !important;
     color: white !important; /* White text on hover */
     transform: translateY(-2px) !important; /* Slight lift on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
