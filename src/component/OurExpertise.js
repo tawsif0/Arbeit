@@ -13,48 +13,56 @@ import uiuxLogo from '../assets/images/uiux-logo.png';
 
 const OurExpertise = () => {
     const expertise = [
-        { title: 'WordPress', description: 'High-performance, SEO-friendly websites.', logo: wordpressLogo },
+        { title: 'UI/UX Design', description: 'Engaging designs crafted to maximize user satisfaction.', logo: uiuxLogo },
         { title: 'MERN Stack', description: 'Dynamic and interactive web applications.', logo: mernLogo },
-        { title: 'Frontend Development', description: 'Clean, responsive designs for seamless UX.', logo: frontendLogo },
+        { title: 'App Development', description: 'Apps with React Native & Flutter for seamless UX.', logo: frontendLogo },
         { title: 'Backend Development', description: 'Reliable, secure, and efficient backend structures.', logo: backendLogo },
-        { title: 'Laravel', description: 'Custom applications built with robust frameworks.', logo: laravelLogo },
-        { title: 'UI/UX Design', description: 'Engaging designs crafted to maximize user satisfaction.', logo: uiuxLogo }
+        { title: 'WordPress', description: 'High-performance, SEO-friendly websites.', logo: wordpressLogo },
+        { title: 'Laravel', description: 'Custom applications built with robust frameworks.', logo: laravelLogo }
     ];
 
-    const [activeCard, setActiveCard] = useState(null);
+    const [activeItem, setActiveItem] = useState(null);
     const containerRef = useRef(null);
 
     return (
-        <section className="expertise-section" ref={containerRef}>
-            <div className="floating-orb orb-1"></div>
-            <div className="floating-orb orb-2"></div>
+        <section className="expertise-container" ref={containerRef}>
+            <div className="expertise-background">
+                <div className="expertise-orb expertise-orb--primary"></div>
+            </div>
 
-            <div className="container">
+            <div className="expertise-content">
                 <Row className="align-items-center">
                     <Col lg={5} className="expertise-intro">
-                        <h2 className="section-title">
-                            <span className="title-gradient">Technology</span>
-                            <span className="title-outline"> That Powers</span>
-                            <span className="title-accent"> Innovation</span>
+                        <div className="expertise-tag">OUR EXPERTISE</div>
+                        <h2 className="expertise-heading">
+                            <span className="expertise-heading--gradient">Cutting-Edge</span>
+                            <span className="expertise-heading--outline">Tech Stack</span>
+                            <span className="expertise-heading--highlight"> Expertise</span>
                         </h2>
-                        <p className="section-description">
-                            Our developers and designers master cutting-edge technologies to deliver
-                            <span className="highlight"> exceptional digital experiences</span> tailored to your needs.
+                        <p className="expertise-description">
+                            We harness the power of modern technologies to craft
+                            <span className="expertise-description--accent"> digital experiences that captivate</span> and convert.
                         </p>
                     </Col>
 
-                    <Col lg={7} className="expertise-cards">
-                        <div className="cards-grid">
+                    <Col lg={7} className="expertise-showcase">
+                        <div className="expertise-hologram">
                             {expertise.map((skill, index) => (
-                                <div className={`tech-card ${activeCard === index ? 'active' : ''}`} key={index} onMouseEnter={() => setActiveCard(index)} onMouseLeave={() => setActiveCard(null)}>
-                                    <div className="card-glow"></div>
-                                    <div className="card-content">
-                                        <div className="tech-logo">
+                                <div
+                                    className={`expertise-hologram-item ${activeItem === index ? 'expertise-hologram-item--active' : ''}`}
+                                    key={index}
+                                    onMouseEnter={() => setActiveItem(index)}
+                                    onMouseLeave={() => setActiveItem(null)}>
+                                    <div className="expertise-hologram-glow"></div>
+                                    <div className="expertise-hologram-content">
+                                        <div className="expertise-hologram-icon">
                                             <img src={skill.logo} alt={skill.title} />
                                         </div>
-                                        <h3 className="tech-title">{skill.title}</h3>
-                                        <p className="tech-description">{skill.description}</p>
-                                        <div className="tech-border"></div>
+                                        <div className="expertise-hologram-text">
+                                            <h3 className="expertise-hologram-title">{skill.title}</h3>
+                                            <p className="expertise-hologram-description">{skill.description}</p>
+                                        </div>
+                                        <div className="expertise-hologram-beam"></div>
                                     </div>
                                 </div>
                             ))}

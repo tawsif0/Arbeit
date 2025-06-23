@@ -11,6 +11,8 @@ import Footer from './component/Footer';
 import ScrollToTop from './component/scroll-top/ScrollToTop';
 import Error from './pages/Error';
 import Career from './component/Careers';
+import About from './component/About';
+import WorkingPattern from './component/WorkingPattern';
 
 const App = () => {
     const location = useLocation();
@@ -45,11 +47,23 @@ const App = () => {
                             <section id="hero">
                                 <HeroSection />
                             </section>
+                            <section id="about">
+                                <div className="section-with-orb right-orb">
+                                    <div className="floating-orb orb-2"></div>
+                                    <About />
+                                </div>
+                            </section>
                             {/* Why Choose Us */}
                             <section id="why-choose-us" className="why-choose-us-section">
                                 <div className="section-with-orb left-orb">
                                     <div className="floating-orb orb-1"></div>
                                     <WhyChooseUs />
+                                </div>
+                            </section>
+                            <section id="working-pattern">
+                                <div className="section-with-orb left-orb">
+                                    <div className="floating-orb orb-1"></div>
+                                    <WorkingPattern />
                                 </div>
                             </section>
                             {/* Our Services */}

@@ -33,33 +33,32 @@ html {
     position: absolute;
     border-radius: 50%;
     filter: blur(60px);
-    opacity: 0.4;
+    opacity: 0.3;
     z-index: -1;
-    pointer-events: none;
-    width: 300px;
-    height: 300px;
-    animation: float 25s infinite alternate ease-in-out;
 }
 
 /* Left Orb Positioning */
 .left-orb .floating-orb {
-    left: -100px;
-    background: radial-gradient(circle, #35a7b2, transparent 70%);
+    width: 300px;
+    height: 300px;
+    background: #35a7b2;
+    top: 10%;
+    left: 5%;
+    animation: float 8s ease-in-out infinite;
 }
 
 /* Right Orb Positioning */
 .right-orb .floating-orb {
-    right: -100px;
-    background: radial-gradient(circle, #4ecdc4, transparent 70%);
+    width: 400px;
+    height: 400px;
+    background: #4ecdc4;
+    bottom: 15%;
+    right: 5%;
+    animation: float 10s ease-in-out infinite 2s;
 }
 
 /* Specific Orb Positions */
-.orb-1 {
-    top: 20%;
-}
-.orb-2 {
-    top: 30%;
-}
+
 .orb-3 {
     top: 25%;
 }

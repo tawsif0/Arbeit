@@ -32,7 +32,7 @@ const CustomNavbar = () => {
     };
 
     useEffect(() => {
-        const sections = ['hero', 'why-choose-us', 'our-services', 'our-expertise', 'client-success-stories', 'get-in-touch'];
+        const sections = ['hero', 'about', 'why-choose-us', 'working-pattern', 'our-services', 'our-expertise', 'client-success-stories', 'get-in-touch'];
 
         const handleScroll = () => {
             const scrollPosition = window.scrollY + 100;
@@ -87,8 +87,14 @@ const CustomNavbar = () => {
                             <Nav.Link onClick={() => handleSmoothScroll('hero')} className={isActive('hero') ? 'active' : ''}>
                                 Home
                             </Nav.Link>
+                            <Nav.Link onClick={() => handleSmoothScroll('about')} className={isActive('about') ? 'active' : ''}>
+                                About Us
+                            </Nav.Link>
                             <Nav.Link onClick={() => handleSmoothScroll('why-choose-us')} className={isActive('why-choose-us') ? 'active' : ''}>
                                 Why Choose Us
+                            </Nav.Link>
+                            <Nav.Link onClick={() => handleSmoothScroll('working-pattern')} className={isActive('working-pattern') ? 'active' : ''}>
+                                Working Pattern
                             </Nav.Link>
                             <Nav.Link onClick={() => handleSmoothScroll('our-services')} className={isActive('our-services') ? 'active' : ''}>
                                 Our Services
@@ -96,6 +102,7 @@ const CustomNavbar = () => {
                             <Nav.Link onClick={() => handleSmoothScroll('our-expertise')} className={isActive('our-expertise') ? 'active' : ''}>
                                 Our Expertise
                             </Nav.Link>
+
                             <Nav.Link as={RouterLink} to="/careers" className={isActive('careers') ? 'active' : ''}>
                                 Careers
                             </Nav.Link>
