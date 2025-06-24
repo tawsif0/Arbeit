@@ -16,62 +16,63 @@ const About = () => {
     const visionRef = useRef(null);
 
     useEffect(() => {
-        // Animate title characters
-        gsap.fromTo(
-            '.about-char',
-            { y: 60, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1.5,
-                stagger: 0.06,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 85%',
-                    toggleActions: 'restart none none reset'
+        const timeout = setTimeout(() => {
+            gsap.fromTo(
+                '.about-char',
+                { y: 60, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    stagger: 0.06,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 85%',
+                        toggleActions: 'restart none none reset'
+                    }
                 }
-            }
-        );
+            );
 
-        // Animate content
-        gsap.fromTo(
-            contentRef.current,
-            { y: 50, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: contentRef.current,
-                    start: 'top 85%',
-                    toggleActions: 'restart none none reset'
+            // Animate content
+            gsap.fromTo(
+                contentRef.current,
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: contentRef.current,
+                        start: 'top 85%',
+                        toggleActions: 'restart none none reset'
+                    }
                 }
-            }
-        );
+            );
 
-        // Animate cards (mission + vision)
-        gsap.fromTo(
-            [missionRef.current, visionRef.current],
-            { y: 80, opacity: 0, scale: 0.95 },
-            {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                ease: 'back.out(1.7)',
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 85%',
-                    toggleActions: 'restart none none reset'
+            // Animate cards (mission + vision)
+            gsap.fromTo(
+                [missionRef.current, visionRef.current],
+                { y: 80, opacity: 0, scale: 0.95 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1,
+                    ease: 'back.out(1.7)',
+                    stagger: 0.2,
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 85%',
+                        toggleActions: 'restart none none reset'
+                    }
                 }
-            }
-        );
-
+            );
+        }, 50);
         // Kill on unmount
         return () => {
+            clearTimeout(timeout);
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
@@ -82,33 +83,18 @@ const About = () => {
 
             <Container>
                 <div className="about-section-header">
+                    <div className="expertise-tag">ABOUT US</div>
                     <div className="about-title">
-                        <span className="about-title-main">
-                            {'About'.split('').map((char, i) => (
-                                <span key={`main-${i}`} className="about-char">
-                                    {char}
-                                </span>
-                            ))}
-                        </span>
-                        <span className="about-title-accent">
-                            {' Us'.split('').map((char, i) => (
-                                <span key={`accent-${i}`} className="about-char">
-                                    {char}
-                                </span>
-                            ))}
-                        </span>
+                        <span className="about-title-main">More Than Just Code</span>
+                        <span className="about-title-accent"> Meet Arbeit</span>
                     </div>
+
                     <div className="about-content-wrapper" ref={contentRef}>
                         <div className="about-content-inner">
-                            <p className="about-lead-text">
+                            <p className="work-subtitle text-center">
                                 At <span className="highlight">Arbeit Technology</span>, we design and develop smart, scalable, and tailored digital solutions to help businesses succeed in a rapidly
-                                evolving world.
-                            </p>
-                            <div className="about-divider"></div>
-                            <p className="about-sub-text">From intuitive websites and powerful e-commerce platforms to custom software and mobile apps — we do it all, and we do it with purpose.</p>
-                            <p className="about-sub-text">
-                                We're more than just developers — we're your technology partner, guiding you from idea to launch and beyond. Our team blends creativity with cutting-edge technology to
-                                build solutions that solve problems, simplify processes, and deliver measurable value.
+                                evolving world.From intuitive websites and powerful e-commerce platforms to custom software and mobile apps — we do it all, and we do it with purpose. We're more than
+                                just developers — we're your technology partner, guiding you from idea to launch and beyond.
                             </p>
                         </div>
                     </div>

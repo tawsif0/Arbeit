@@ -19,35 +19,33 @@
 }
 
 .about-title {
-    margin-bottom: 3rem !important;
-    perspective: 1000px !important;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 2rem;
+    line-height: 1.2;
 }
 
 .about-title-main,
 .about-title-accent {
-    display: inline-block !important;
-    font-size: 5rem;
-    line-height: 1 !important;
-    text-transform: uppercase;
-    letter-spacing: 2px !important;
+    display: block;
+    font-weight: 800;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
 }
 
 .about-title-main {
-    font-weight: 300;
     color: white;
     margin-right: 0.5rem;
 }
 
 .about-title-accent {
-    font-weight: 700 !important;
-    background: linear-gradient(90deg, #35a7b2, #4ecdc4) !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    background: linear-gradient(90deg, #35a7b2, #4ecdc4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-content-wrapper {
-    margin-top: 4rem;
+    margin-top: 2rem;
     position: relative;
 }
 

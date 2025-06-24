@@ -121,6 +121,23 @@ const GetInTouch = () => {
             {/* Video Background */}
 
             <div className="container">
+                <div className="about-section-header">
+                    <div className="expertise-tag">CONTACT US</div>
+                    <div className="about-title">
+                        <span className="about-title-main">Let’s Build Something</span>
+                        <span className="about-title-accent"> Extraordinary Together</span>
+                    </div>
+
+                    <div className="about-content-wrapper">
+                        <div className="about-content-inner">
+                            <p className="work-subtitle text-center">
+                                Have an idea, project, or just a question? <span className="highlight">Arbeit Technology</span> is here to help. Reach out to us and let’s start a conversation about
+                                how we can turn your vision into a powerful digital solution.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="text-wrapper">
                     {/* Form */}
                     <form className="get-in-touch-form" onSubmit={handleSubmit}>

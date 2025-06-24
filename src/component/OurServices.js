@@ -110,7 +110,11 @@ const OurServices = () => {
 
     return (
         <section className="our-services">
-            <h1 className="text-center">Our Services</h1>
+            <div className="text-center">
+                <div className="expertise-tag">OUR SERVICES</div>
+            </div>
+            <h1 className="text-center">Crafting Digital Solutions</h1>
+
             <Slider {...settings}>
                 {services.map((service, index) => (
                     <div key={index} className="service-slide">
