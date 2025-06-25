@@ -57,9 +57,9 @@
 
 /* ======== Form Styling ======== */
 .get-in-touch-form {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 35px;
     background: rgba(53, 167, 178, 0.1);
     border: 1px solid rgba(53, 167, 178, 0.2);
     border-radius: 20px;
@@ -132,7 +132,7 @@
     position: absolute;
     top: 15px;
     left: 15px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
 }
@@ -230,7 +230,7 @@
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
+    padding: 3px 15px 0px;
     transition: all 0.3s ease;
 }
 
@@ -244,7 +244,7 @@
 /* ======== Phone Input Styling ======== */
 .phone-input {
     width: 100%;
-    padding: 15px;
+    padding: 4px 7px 0px;
     border: none;
     background: transparent;
     color: #ffffff;
@@ -364,18 +364,22 @@
 
 .form-groups.floating-label label {
     position: absolute;
-    top: 15px;
+    top: 8px;
     left: 15px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
 }
 
 .form-groups.floating-label .phone-input-container:focus-within + label {
-    top: 10px;
-    left: 15px;
+    top: 4px;
+    left: 10px;
     font-size: 0.9rem;
     color: #00fff2de !important;
+}
+.queries-big input {
+    padding-top: 25px;
+    padding-bottom: 60px !important;
 }
 /* ======== Custom Toast Notifications ======== */
 .custom-toast {

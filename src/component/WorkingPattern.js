@@ -32,7 +32,7 @@ const WorkingPattern = () => {
             )
         },
         {
-            title: 'Strategy',
+            title: 'Planning & Strategy',
             description: 'We design a custom roadmap aligned with your goals.',
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@ const WorkingPattern = () => {
             )
         },
         {
-            title: 'Development',
+            title: 'Design & Development',
             description: 'We build high-quality solutions with care and precision.',
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

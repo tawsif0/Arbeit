@@ -30,6 +30,7 @@
     overflow: hidden;
     z-index: 10;
     padding: 80px 0;
+    height: 100vh;
 }
 
 .hero-content {
@@ -38,6 +39,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 12;
+    transform-origin: center;
 }
 
 .career-main-title {
@@ -58,22 +60,10 @@
     display: inline-block;
 }
 
-/* .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background: rgba(0, 255, 204, 0.3);
-    z-index: -1;
-    transform: skew(-15deg);
-} */
-
 .career-subtitle {
     font-size: clamp(1.2rem, 2vw, 1.5rem) !important;
     max-width: 700px !important;
-    margin: 0 auto 3rem !important;
+    margin: 0 auto 1.5rem !important;
     color: rgba(255, 255, 255, 0.85) !important;
     line-height: 1.6 !important;
     position: relative !important;
@@ -82,7 +72,7 @@
 
 /* ======= SCROLL INDICATOR ======= */
 .scroll-indicator {
-    margin-top: 4rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     position: relative;
@@ -133,7 +123,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 4rem; */
 }
 
 @media (min-width: 768px) {
@@ -160,9 +149,10 @@
     justify-content: center;
     align-items: stretch;
     width: 100%;
-    max-width: 650px; /* Set a max width for the cards */
-    margin-bottom: 20px; /* Optional: Adjust bottom margin */
+    max-width: 650px;
+    margin-bottom: 20px;
 }
+
 /* ======= JOB CARD ======= */
 .career-job-card {
     position: relative;
@@ -171,7 +161,7 @@
     padding: 0 !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     width: 100%;
-    max-width: 100%; /* Use full width for mobile */
+    max-width: 100%;
     min-height: 380px;
     perspective: 1000px;
     display: flex;
@@ -270,6 +260,7 @@
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
+
 /* ======= MODAL STYLES ======= */
 .career-modal {
     border: none;
@@ -424,58 +415,6 @@
     box-shadow: 0 8px 30px rgba(0, 204, 255, 0.6);
     background: linear-gradient(135deg, var(--secondary), var(--primary));
 }
-/* ======= JOB DETAILS ======= */
-.job-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.job-details.show {
-    max-height: 1500px;
-    margin-bottom: 1.5rem;
-}
-
-.details-section {
-    margin-bottom: 2rem;
-}
-
-.details-section h5 {
-    font-size: 1.2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.section-icon {
-    font-size: 1.3rem;
-}
-
-.details-section ul {
-    padding-left: 1.5rem;
-    margin-bottom: 0;
-}
-
-.details-section li {
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.list-icon {
-    position: absolute;
-    left: 0;
-    color: var(--secondary);
-    font-weight: bold;
-}
 
 /* ======= CARD FOOTER ======= */
 .card-footer {
@@ -589,80 +528,10 @@
     pointer-events: none;
 }
 
-.particle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(0, 204, 255, 0.05);
-    backdrop-filter: blur(2px);
-    animation: float 15s infinite linear;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.5;
-}
-
-.particle-1 {
-    width: 200px;
-    height: 200px;
-    top: 15%;
-    left: 10%;
-    background: radial-gradient(circle, rgba(0, 204, 255, 0.05) 0%, transparent 70%);
-    animation-delay: 0s;
-    animation-duration: 25s;
-}
-
-.particle-2 {
-    width: 150px;
-    height: 150px;
-    bottom: 20%;
-    right: 15%;
-    background: radial-gradient(circle, rgba(0, 255, 204, 0.05) 0%, transparent 70%);
-    animation-delay: 5s;
-    animation-duration: 20s;
-}
-
-.particle-3 {
-    width: 100px;
-    height: 100px;
-    top: 45%;
-    right: 25%;
-    background: radial-gradient(circle, rgba(255, 0, 204, 0.03) 0%, transparent 70%);
-    animation-delay: 10s;
-    animation-duration: 30s;
-}
-
-.particle-4 {
-    width: 80px;
-    height: 80px;
-    bottom: 35%;
-    left: 20%;
-    background: radial-gradient(circle, rgba(204, 0, 255, 0.03) 0%, transparent 70%);
-    animation-delay: 15s;
-    animation-duration: 22s;
-}
-
-/* ======= FLOAT ANIMATION ======= */
-@keyframes float {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        transform: translate(20px, -30px) rotate(90deg);
-    }
-    50% {
-        transform: translate(0, -60px) rotate(180deg);
-    }
-    75% {
-        transform: translate(-20px, -30px) rotate(270deg);
-    }
-    100% {
-        transform: translate(0, 0) rotate(360deg);
-    }
-}
-
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     .career-job-grid {
-        grid-template-columns: 1fr; /* Only 1 column on mobile */
+        grid-template-columns: 1fr;
     }
 
     .career-job-card {
@@ -677,6 +546,7 @@
         font-size: 1rem;
     }
 }
+
 @media (max-width: 768px) {
     .career-container {
         padding: 2rem 1rem;
@@ -684,32 +554,52 @@
 
     .career-job-col {
         width: 100%;
-        max-width: 100%; /* Cards should be full width */
+        max-width: 100%;
         margin-bottom: 20px;
     }
 
-    /* Title font size adjustment */
     .career-job-title {
         font-size: 1.4rem;
     }
 
-    /* Card Description Font Size */
     .career-job-description {
         font-size: 0.9rem;
     }
 
     .career-apply-button {
-        width: 100%; /* Button full width on mobile */
+        width: 100%;
     }
 
     .career-expand-button {
-        width: 100%; /* Expand button full width on mobile */
+        width: 100%;
     }
 }
 
 /* ======= RESPONSIVE STYLES FOR TABLET AND DESKTOP ======= */
 @media (min-width: 768px) {
     .career-job-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets and above */
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+.no-jobs-message {
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.no-jobs-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.no-jobs-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
 }

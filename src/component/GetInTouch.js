@@ -31,7 +31,7 @@ const GetInTouch = () => {
         if (!formData.email.trim()) {
             errors.email = 'Email is required';
         } else if (!emailRegex.test(formData.email)) {
-            errors.email = 'Invalid email address';
+            errors.email = 'Invalid email queries';
         }
 
         // Phone number validation
@@ -41,11 +41,11 @@ const GetInTouch = () => {
             errors.phone = 'Invalid phone number';
         }
 
-        // Address validation
-        if (!formData.address.trim()) {
-            errors.address = 'Address is required';
-        } else if (formData.address.trim().length < 5) {
-            errors.address = 'Address must be at least 5 characters';
+        // queries validation
+        if (!formData.queries.trim()) {
+            errors.queries = 'Queries is required';
+        } else if (formData.queries.trim().length < 5) {
+            errors.queries = 'Queries must be at least 5 characters';
         }
 
         return errors;
@@ -62,7 +62,7 @@ const GetInTouch = () => {
             name: e.target.name.value,
             email: e.target.email.value,
             phone: phone, // Use the state for phone number
-            address: e.target.address.value
+            queries: e.target.queries.value
         };
 
         // Validate form data
@@ -142,7 +142,7 @@ const GetInTouch = () => {
                     {/* Form */}
                     <form className="get-in-touch-form" onSubmit={handleSubmit}>
                         <h2 className="section-titles">
-                            Let’s Build Something <span className="highlight">Exceptional</span> Together
+                            Get in <span className="highlight">Touch</span>
                         </h2>
 
                         {/* Name Field */}
@@ -168,11 +168,11 @@ const GetInTouch = () => {
                             {errors.phone && <div className="error-message">{errors.phone}</div>}
                         </div>
 
-                        {/* Address Field */}
-                        <div className="form-group floating-label">
-                            <input type="text" id="address" name="address" placeholder=" " className={errors.address ? 'is-invalid' : ''} autoComplete="off" />
-                            <label htmlFor="address">Address</label>
-                            {errors.address && <div className="error-message">{errors.address}</div>}
+                        {/* queries Field */}
+                        <div className="form-group floating-label queries-big">
+                            <input type="text" id="queries" name="queries" placeholder=" " className={errors.queries ? 'is-invalid' : ''} autoComplete="off" />
+                            <label htmlFor="queries">Queries</label>
+                            {errors.queries && <div className="error-message">{errors.queries}</div>}
                         </div>
 
                         {/* Submit Button with Loader */}

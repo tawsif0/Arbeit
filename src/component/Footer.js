@@ -62,8 +62,18 @@ export default function App() {
                             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">Useful Links</h6>
                                 <p>
+                                    <a onClick={() => handleScrollTo('about')} className="text-reset" role="button">
+                                        About Us
+                                    </a>
+                                </p>
+                                <p>
                                     <a onClick={() => handleScrollTo('why-choose-us')} className="text-reset" role="button">
                                         Why Choose Us
+                                    </a>
+                                </p>
+                                <p>
+                                    <a onClick={() => handleScrollTo('working-pattern')} className="text-reset" role="button">
+                                        Working Pattern
                                     </a>
                                 </p>
                                 <p>

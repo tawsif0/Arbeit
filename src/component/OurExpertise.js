@@ -35,7 +35,7 @@ const OurExpertise = () => {
                     <Col lg={5} className="expertise-intro">
                         <div className="expertise-tag">OUR EXPERTISE</div>
                         <h2 className="expertise-heading">
-                            <span className="expertise-heading--gradient">Cutting-Edge</span>
+                            <span className="expertise-heading--gradient">Next-Level</span>
                             <span className="expertise-heading--outline">Tech Stack</span>
                             <span className="expertise-heading--highlight"> Expertise</span>
                         </h2>

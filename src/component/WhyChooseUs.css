@@ -93,7 +93,7 @@
 
 .expertise-features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -110,6 +110,7 @@
     transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     min-height: 280px;
     z-index: 1;
+    cursor: pointer;
 }
 
 .expertise-feature-glow {
@@ -224,7 +225,7 @@
     }
 
     .expertise-features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
     }
 }
 
