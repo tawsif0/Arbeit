@@ -179,7 +179,7 @@ const GetInTouch = () => {
                         <Button type="submit" className="cta-button" disabled={isSubmitting}>
                             {isSubmitting ? (
                                 <>
-                                    <ClipLoader color="#000" size={20} /> {/* Loader while submitting */}
+                                    <ClipLoader color="#fff" size={20} /> {/* Loader while submitting */}
                                     <span style={{ marginLeft: '10px' }}>Submitting</span> {/* Text next to the loader */}
                                 </>
                             ) : (
