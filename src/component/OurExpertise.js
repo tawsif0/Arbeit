@@ -7,7 +7,6 @@ import './OurExpertise.css';
 import wordpressLogo from '../assets/images/wordpress-logo.png';
 import mernLogo from '../assets/images/mern-logo.png';
 import frontendLogo from '../assets/images/frontend-logo.png';
-import backendLogo from '../assets/images/backend-logo.png';
 import laravelLogo from '../assets/images/laravel-logo.png';
 import uiuxLogo from '../assets/images/uiux-logo.png';
 
@@ -16,7 +15,6 @@ const OurExpertise = () => {
         { title: 'UI/UX Design', description: 'Engaging designs crafted to maximize user satisfaction.', logo: uiuxLogo },
         { title: 'MERN Stack', description: 'Dynamic and interactive web applications.', logo: mernLogo },
         { title: 'App Development', description: 'Apps with React Native & Flutter for seamless UX.', logo: frontendLogo },
-        { title: 'Backend Development', description: 'Reliable, secure, and efficient backend structures.', logo: backendLogo },
         { title: 'WordPress', description: 'High-performance, SEO-friendly websites.', logo: wordpressLogo },
         { title: 'Laravel', description: 'Custom applications built with robust frameworks.', logo: laravelLogo }
     ];

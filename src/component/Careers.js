@@ -26,7 +26,7 @@ const Career = () => {
             requirements: ['WordPress theme development skills', 'Webflow platform experience', 'HTML5/CSS3/JS fundamentals', 'PHP basics for customization', 'UI/UX design sensibility'],
             benefits: ['Real project experience', 'Portfolio building opportunity', 'Professional development certification'],
             applyLink: 'https://forms.gle/ZZDuWMWf1FsYeSG97',
-            deadline: '3 July 2024'
+            deadline: '3 July 2025'
         },
         {
             id: 2,
@@ -39,7 +39,7 @@ const Career = () => {
             requirements: ['JavaScript proficiency', 'React.js fundamentals', 'Interest in Node.js/Express', 'Database concepts (SQL/NoSQL)'],
             benefits: ['Real project experience', 'Portfolio building opportunity', 'Professional development certification'],
             applyLink: 'https://forms.gle/zoFx7hLn2hWNYKLi6',
-            deadline: '3 July 2024'
+            deadline: '3 July 2025'
         }
     ]);
 
