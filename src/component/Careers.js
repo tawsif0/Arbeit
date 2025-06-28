@@ -10,56 +10,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Career = () => {
     const [jobs] = useState([
-        // {
-        //     id: 1,
-        //     title: 'UI/UX Design Intern',
-        //     location: 'Kuril, Dhaka (On-site)',
-        //     type: 'Internship (3 Months)',
-        //     description: 'Join Arbeit Technology as a UI/UX Design Intern. Collaborate on real projects, design interfaces, and gain hands-on experience in a startup environment.',
-        //     compensation: 'Travel allowance only',
-        //     responsibilities: [
-        //         'Design interfaces for web and mobile apps',
-        //         'Create wireframes, prototypes, and mockups',
-        //         'Work on product UI/UX and landing pages',
-        //         'Collaborate with developers',
-        //         'Apply motion/animated design concepts'
-        //     ],
-        //     requirements: [
-        //         'Must be a fresh graduate',
-        //         'Strong UI/UX principles knowledge',
-        //         'Proficiency in Figma (preferred), Photoshop, Illustrator',
-        //         'Basic graphic design understanding',
-        //         'Passion for animation and modern UI trends'
-        //     ],
-        //     benefits: ['Real project experience', 'Portfolio building opportunity', 'Mentorship from experienced designers', 'Potential full-time position', 'Startup environment insight'],
-        //     applyLink: 'https://forms.gle/tyLY9PbWTYKBYtr36',
-        //     deadline: '24 June 2025'
-        // },
-        // {
-        //     id: 2,
-        //     title: 'Digital Marketing Specialist',
-        //     location: 'Kuril, Dhaka (On-site)',
-        //     type: 'Full-time (6 Months Probation)',
-        //     description: 'Manage and grow our digital presence. Expert in Meta ads with SEO knowledge wanted. Opportunity for career growth in a startup.',
-        //     compensation: 'BDT 12,000 – 15,000/month during probation',
-        //     responsibilities: [
-        //         'Plan and manage Meta (Facebook/Instagram) Ads',
-        //         'Optimize ad campaigns for conversions',
-        //         'Manage social media pages and content',
-        //         'Work on SEO for websites',
-        //         'Track and report performance metrics'
-        //     ],
-        //     requirements: [
-        //         '0–1 year digital marketing experience',
-        //         'Expert in Meta Ads (hands-on experience)',
-        //         'Basic to intermediate SEO knowledge',
-        //         'Social media management skills',
-        //         'Understanding of ad targeting and budgeting'
-        //     ],
-        //     benefits: ['Salary increment after probation', 'Permanent position opportunity', 'Creative freedom in marketing', 'Career growth with real projects', 'Supportive team environment'],
-        //     applyLink: 'https://forms.gle/hUL7apBxY1uTuAEX6',
-        //     deadline: '24 June 2025'
-        // }
+        {
+            id: 1,
+            title: 'WordPress Developer Intern',
+            location: 'Kuril, Dhaka (On-site)',
+            type: 'Internship (3 Months)',
+            description: 'Master WordPress theme & plugin customization, develop production-ready Webflow sites, and work on live projects for your portfolio.',
+            compensation: 'Travel allowance only',
+            responsibilities: [
+                'Master WordPress theme & plugin customization',
+                'Develop production-ready Webflow sites',
+                'Work on 5+ live projects for your portfolio',
+                'Receive professional development certification'
+            ],
+            requirements: ['WordPress theme development skills', 'Webflow platform experience', 'HTML5/CSS3/JS fundamentals', 'PHP basics for customization', 'UI/UX design sensibility'],
+            benefits: ['Real project experience', 'Portfolio building opportunity', 'Professional development certification'],
+            applyLink: 'https://forms.gle/ZZDuWMWf1FsYeSG97',
+            deadline: '3 July 2024'
+        },
+        {
+            id: 2,
+            title: 'MERN Stack Developer Intern',
+            location: 'Kuril, Dhaka (On-site)',
+            type: 'Internship (3 Months)',
+            description: 'Build full-stack applications with MERN, develop RESTful APIs, and gain cloud deployment experience.',
+            compensation: 'Travel allowance only',
+            responsibilities: ['Build full-stack applications with MERN', 'Develop RESTful APIs with Node.js/Express', 'Implement MongoDB database solutions', 'Gain experience with cloud deployment'],
+            requirements: ['JavaScript proficiency', 'React.js fundamentals', 'Interest in Node.js/Express', 'Database concepts (SQL/NoSQL)'],
+            benefits: ['Real project experience', 'Portfolio building opportunity', 'Professional development certification'],
+            applyLink: 'https://forms.gle/zoFx7hLn2hWNYKLi6',
+            deadline: '3 July 2024'
+        }
     ]);
 
     const [selectedJob, setSelectedJob] = useState(null);
